@@ -515,6 +515,8 @@ const createTrial = {
         const trialType = jsPsych.timelineVariable('type');
         data.trial_type = trialType;
         data.speedy = data.rt < 900;
+        data.choices = [jsPsych.timelineVariable('choice1'), jsPsych.timelineVariable('choice2')];
+
         
         if (trialType === 'check') {
             data.correct = data.response === jsPsych.timelineVariable('correct_choice');
